@@ -1,0 +1,18 @@
+ID:1
+Home: Redwood forest, Town of Hall Brooks,Olympus Mountain, Block, This is Home, where everything starts.
+Town of Hall Brooks: Block, Orge Cave, Home, Block, Town of Hall Brooks is where people like you exist.
+Orge Cave: Adder Cliff I, Block, Town of Hall brooks, Block, Orge Cave is magical, wonderful, yet sth special is waiting for you.
+Adder Cliff I: Kayla Mountain, Block, Block, Orge Cave, Adder Cliff is so high.
+Kayla Mountain:  Mysterious Cave I, Block, Mysterious Cave II, Adder Cliff I, Kayla Mountain is holy.
+Mysterious Cave I: Block, Block, Town of Dandrum, Kayla Mountain, As mysterious as it sounds, watch your back.
+Town of Dandrum: Block, Mysterious Cave I, Orge Cave I,  Mysterious Cave II, Town of Dandrum was once glorious.
+Mysterious Cave II: Town of Dandrum, Kayla Mountain, Adder Cliff II, Block, As mysterious as it sounds, watch your back.
+Orge Cave I: Block, Town of Dandrum, Block, Adder Cliff II, Orge Cave is magical, wonderful, yet sth special is waiting for you.
+Adder Cliff II: Orge Cave I, Mysterious Cave II, Hallerbos forest, Redwood forest, Adder Cliff is so high.
+Redwood forest: Adder Cliff II, Block, Block, Home, Red is pretty.
+Hallerbos forest: Block, Adder Cliff II, Town of Hanuka, Block, Hallerbos is pretty.
+Orge Cave II: Block, Block, Block, Town of Hanuka, Orge Cave is magical, wonderful, yet sth special is waiting for you.
+Town of Hanuka: Orge Cave II, Hallerbos forest, Block, Mysterious Cave III, Town of Hanuka is where you can feel safe.
+Mysterious Cave III: Town of Hanuka, Block, Block, Adder Cliff III, As mysterious as it sounds, watch your back.
+Adder Cliff III: Mysterious Cave III, Olympus Mountain, Block, Block, Adder Cliff is so high.
+Olympus Mountain: Block, Home, Adder Cliff III, Block, Kayla Mountain is jolly.
