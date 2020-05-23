@@ -5,6 +5,7 @@ public class BlueMonster {
     private int maxHP;
     private int attackPlayer;
     private boolean alive;
+    private int finalAttack;
     public BlueMonster() {
         HP = 200;
         maxHP = 200;
@@ -33,6 +34,20 @@ public class BlueMonster {
 
     public boolean isAlive() {
         return alive;
+    }
+
+    public int setFinalAttack(){
+        double rand = Math.random();
+        if (rand <= 0.2){
+            finalAttack = 0;
+        }
+        else if (rand <= 0.5){
+            finalAttack = attackPlayer - attackPlayer/2;
+        }
+        else if (rand <= 0.8){
+            finalAttack = attackPlayer;
+        }
+        return finalAttack;
     }
 
     public void increasePower(){
