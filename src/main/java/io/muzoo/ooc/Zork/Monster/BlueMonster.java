@@ -50,6 +50,10 @@ public class BlueMonster {
         return finalAttack;
     }
 
+    public int getFinalAttack() {
+        return finalAttack;
+    }
+
     public void increasePower(){
         if (HP == maxHP){
             maxHP+=6;

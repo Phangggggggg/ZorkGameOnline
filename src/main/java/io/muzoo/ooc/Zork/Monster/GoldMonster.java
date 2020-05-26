@@ -5,6 +5,7 @@ public class GoldMonster {
     private int maxHP;
     private int attackPlayer;
     private boolean alive;
+    private int finalAttack;
 
     public GoldMonster() {
         HP = 350;
@@ -46,5 +47,19 @@ public class GoldMonster {
         }
         attackPlayer+=8;
     }
+    public int setFinalAttack(){
+        double rand = Math.random();
+        if (rand <= 0.2){
+            finalAttack = 0;
+        }
+        else if (rand <= 0.5){
+            finalAttack = attackPlayer - attackPlayer/2;
+        }
+        else if (rand <= 0.8){
+            finalAttack = attackPlayer;
+        }
+        return finalAttack;
+    }
+
 
 }

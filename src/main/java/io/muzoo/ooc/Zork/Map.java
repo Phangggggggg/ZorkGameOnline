@@ -15,7 +15,7 @@ public class Map {
         this.fileName = fileName;
     }
 
-    public void setRoomHashMap(HashMap<String, Room> roomHashMap) {
+    public void setRoomHashMap() {
         try {
             // Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
@@ -40,6 +40,11 @@ public class Map {
     }
 
     public HashMap<String, Room> getRoomHashMap() {
+        setRoomHashMap();
         return roomHashMap;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

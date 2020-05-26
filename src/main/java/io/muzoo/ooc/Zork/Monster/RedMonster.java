@@ -5,13 +5,13 @@ public class RedMonster {
     private int maxHP;
     private int attackPlayer;
     private boolean alive;
+    private int finalAttack;
 
     public RedMonster(){
         maxHP = 100;
         HP = 100;
         attackPlayer = 50;
         alive = true;
-
     }
 
     public RedMonster(int HP, int maxHP, int attackMonster, boolean alive) {
@@ -28,6 +28,21 @@ public class RedMonster {
     public int getMaxHP() {
         return maxHP;
     }
+
+    public int setFinalAttack(){
+        double rand = Math.random();
+        if (rand <= 0.2){
+            finalAttack = 0;
+        }
+        else if (rand <= 0.5){
+            finalAttack = attackPlayer - attackPlayer/2;
+        }
+        else if (rand <= 0.8){
+            finalAttack = attackPlayer;
+        }
+        return finalAttack;
+    }
+
 
     public int getAttackMonster() {
         return attackPlayer;
