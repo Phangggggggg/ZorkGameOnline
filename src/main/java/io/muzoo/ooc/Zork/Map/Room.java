@@ -1,4 +1,4 @@
-package io.muzoo.ooc.Zork;
+package io.muzoo.ooc.Zork.Map;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,17 +1,17 @@
-package io.muzoo.ooc.Zork;
+package io.muzoo.ooc.Zork.Map;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Random;
 
-public class Map {
-    String fileName;
-    HashMap<String, Room> roomHashMap = new HashMap<>();
+public class ReadFile {
+    private String fileName;
+    private HashMap<String, Room> roomHashMap = new HashMap<>();
+    private String cornerRoom;
 
-    public Map(String fileName) {
+    public ReadFile(String fileName) {
         this.fileName = fileName;
     }
 
@@ -25,7 +25,6 @@ public class Map {
                 String room = line1.split(":")[0].trim();
                 String nd = line1.split(":")[1].trim();
                 String[] neighboursList = nd.split(",");
-
                 Room roomObj = new Room(neighboursList[neighboursList.length-1],
                         Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
                 roomHashMap.put(room,roomObj);
@@ -45,6 +44,8 @@ public class Map {
     }
 
     public static void main(String[] args) {
+        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/rooms.txt");
+        System.out.println(rf.getRoomHashMap());
 
     }
 }
