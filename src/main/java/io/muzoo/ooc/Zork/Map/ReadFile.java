@@ -9,25 +9,50 @@ import java.util.HashMap;
 public class ReadFile {
     private String fileName;
     private HashMap<String, Room> roomHashMap = new HashMap<>();
-    private boolean;
+    private int[] numLayer = new int[2];
+    private int[] startIndex = new  int[2];
+    private String id;
+
+
+
 
     public ReadFile(String fileName) {
         this.fileName = fileName;
+    }
+
+    public int[] getNumLayer() {
+        return numLayer;
+    }
+
+    public int[] getStartIndex() {
+        return startIndex;
     }
 
     public void setRoomHashMap() {
         try {
             // Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-            bufferedReader.readLine(); // this will read the first line
+            id = bufferedReader.readLine(); // this will read the first line
             String line1 = null;
             while ((line1 = bufferedReader.readLine()) != null) {
                 String room = line1.split(":")[0].trim();
                 String nd = line1.split(":")[1].trim();
                 String[] neighboursList = nd.split(",");
-                Room roomObj = new Room(neighboursList[neighboursList.length-1],
-                        Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
-                roomHashMap.put(room,roomObj);
+                if (room.equals("RowColumn")){
+                    numLayer[0] = Integer.parseInt(neighboursList[0].trim());// row of map
+                    numLayer[1] = Integer.parseInt(neighboursList[1].trim());// column of map
+                }
+                else if (room.equals("StartIndex")){
+                    startIndex[0] = Integer.parseInt(neighboursList[0].trim());//start index row
+                    startIndex[1] = Integer.parseInt(neighboursList[1].trim()); //start index column
+
+                }
+                else{
+                    Room roomObj = new Room(neighboursList[neighboursList.length-1].trim(),
+                            Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
+                    roomHashMap.put(room,roomObj);
+                }
+
 
             }
 
@@ -39,13 +64,18 @@ public class ReadFile {
     }
 
     public HashMap<String, Room> getRoomHashMap() {
-        setRoomHashMap();
         return roomHashMap;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public static void main(String[] args) {
-        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/rooms.txt");
-        System.out.println(rf.getRoomHashMap());
+        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
+        rf.setRoomHashMap();
+        System.out.println(rf.getId());
+
 
     }
 }
