@@ -21,10 +21,7 @@ public class CreateMap {
         this.numLayer = numLayer;
         this.startIndex = startIndex;
         asciiMap = new String[numLayer[0]][numLayer[1]];
-        if (id.contains("1")){
-            startingPoint = "Home";
-        }
-
+        startingPoint = "Home";
         keep = new HashMap<>();
     }
 
@@ -67,7 +64,7 @@ public class CreateMap {
                 index[1] = column;
                 keep.put(north,index);
                 if (!north.equals("Block")){
-                    union.add(east);
+                    union.add(north);
                 }
             }
             if (!south.equals("Corner")){
@@ -86,7 +83,7 @@ public class CreateMap {
                 index[0] = row;
                 index[1] = column-1;
                 keep.put(west,index);
-                if (!north.equals("Block")){
+                if (!west.equals("Block")){
                     union.add(west);
                 }
             }
@@ -96,15 +93,25 @@ public class CreateMap {
 
     }
 
-    public String[][] getAsciiMap() {
+    public void getAsciiMap() {
         setAsciiMap();
-        return asciiMap;
+        for (String[] str:asciiMap) {
+            String line = "";
+            for (String s:str) {
+                line = line + s + "|";
+            }
+            System.out.println(line);
+
+        }
     }
 
+
+
+
     public static void main(String[] args) {
-        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/rooms.txt");
+        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
         rf.setRoomHashMap();
         CreateMap cm = new CreateMap(rf.getNumLayer(),rf.getStartIndex(),rf.getRoomHashMap(),rf.getId());
-        System.out.println(cm.getAsciiMap());
+        cm.getAsciiMap();
     }
 }

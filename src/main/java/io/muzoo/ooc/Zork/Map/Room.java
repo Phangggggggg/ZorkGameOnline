@@ -15,10 +15,6 @@ public class Room {
     public Room(String description, List<String> adjacentRooms) {
         this.description = description;
         this.adjacentRooms = adjacentRooms;
-        this.north = adjacentRooms.get(0);
-        this.east = adjacentRooms.get(2);
-        this.south = adjacentRooms.get(3);
-        this.west = adjacentRooms.get(1);
     }
 
     public String getDescription() {
@@ -30,18 +26,18 @@ public class Room {
     }
 
     public String getNorth() {
-        return north;
+        return adjacentRooms.get(0);
     }
 
     public String getEast() {
-        return east;
+        return adjacentRooms.get(2);
     }
 
     public String getSouth() {
-        return south;
+        return adjacentRooms.get(3);
     }
 
     public String getWest() {
-        return west;
+        return adjacentRooms.get(1);
     }
 }

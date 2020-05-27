@@ -1,5 +1,4 @@
-ID:1
-                                          Home:Redwood forest,Town of Hall Brooks,Olympus Mountain,Block,This is Home,where everything starts.
+ID:1Home:Redwood forest,Town of Hall Brooks,Olympus Mountain,Block,This is Home,where everything starts.
                                           Town of Hall Brooks:Block,Orge Cave,Home,Block,Town of Hall Brooks is where people like you exist.
                                           Orge Cave:Adder Cliff I,Block,Town of Hall brooks,Block,Orge Cave is magical,wonderful,yet sth special is waiting for you.
                                           Adder Cliff I:Kayla Mountain,Block,Block,Orge Cave,Adder Cliff is so high.

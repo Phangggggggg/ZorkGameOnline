@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb4772ac-3001-48b0-8f92-7693e7219c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/phang.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/room2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -12,10 +10,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/CreateMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/CreateMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/ReadFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/ReadFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/room2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/room2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/rooms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/rooms.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/CreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/CreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/room2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/room2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/rooms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rooms.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -191,7 +194,7 @@
       <workItem from="1590463406523" duration="71000" />
       <workItem from="1590497465889" duration="7494000" />
       <workItem from="1590512443078" duration="64000" />
-      <workItem from="1590555183300" duration="19137000" />
+      <workItem from="1590555183300" duration="23217000" />
     </task>
     <servers />
   </component>

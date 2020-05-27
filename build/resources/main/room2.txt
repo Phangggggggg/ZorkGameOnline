@@ -1,7 +1,7 @@
 ID:1
 Home:Redwood forest,Town of Hall Brooks,Olympus Mountain,Corner,Your starting point.
 Town of Hall Brooks:Block,Orge Cave,Home,Corner,Town of Hall Brooks is where people like you exist.
-Orge Cave:Adder Cliff I,Corner,Town of Hall brooks,Corner,Orge Cave is magical and wonderful.
+Orge Cave:Adder Cliff I,Corner,Town of Hall Brooks,Corner,Orge Cave is magical and wonderful.
 Adder Cliff I:Kayla Mountain,Corner,Block,Orge Cave,Adder Cliff is so high.
 Kayla Mountain:Mysterious Cave I,Corner,Mysterious Cave II,Adder Cliff I,Kayla Mountain is holy.
 Mysterious Cave I:Corner,Corner,Town of Dandrum,Kayla Mountain,Watch your back!
@@ -13,7 +13,7 @@ Redwood forest:Adder Cliff II,Block,Block,Home,Red is pretty.
 Hallerbos forest:Town of Salem,Adder Cliff II,Town of Hanuka,Block,Hallerbos is pretty.
 Orge Cave II:Corner,Town of Salem,Corner,Town of Hanuka,Orge Cave is picturesque.
 Town of Hanuka:Orge Cave II,Hallerbos forest,Corner,Mysterious Cave III,Town of Hanuka is where you can feel safe.
-Mysterious Cave III:Town of Hanuka,Block,Block,Adder Cliff III,As mysterious as it sounds, watch your back.
+Mysterious Cave III:Town of Hanuka,Block,Corner,Adder Cliff III,As mysterious as it sounds, watch your back.
 Adder Cliff III:Mysterious Cave III,Olympus Mountain,Corner,Corner,Adder Cliff is so high.
 Olympus Mountain:Block,Home,Adder Cliff III,Corner,Olympus Mountain is jolly.
 Town of Salem:Corner,Orge Cave I,Orge Cave II,Hallerbos forest,Witchy!

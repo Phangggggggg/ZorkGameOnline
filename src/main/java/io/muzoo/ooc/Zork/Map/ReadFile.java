@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ReadFile {
     private String fileName;
@@ -74,7 +75,8 @@ public class ReadFile {
     public static void main(String[] args) {
         ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
         rf.setRoomHashMap();
-        System.out.println(rf.getId());
+        HashMap<String, Room> map = rf.getRoomHashMap();
+        System.out.println(map.size());
 
 
     }
