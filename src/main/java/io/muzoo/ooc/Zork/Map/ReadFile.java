@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class ReadFile {
     private String fileName;
     private HashMap<String, Room> roomHashMap = new HashMap<>();
-    private String cornerRoom;
+    private boolean;
 
     public ReadFile(String fileName) {
         this.fileName = fileName;

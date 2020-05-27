@@ -6,6 +6,7 @@ public class GoldMonster {
     private int attackPlayer;
     private boolean alive;
     private int finalAttack;
+    private String location;
 
     public GoldMonster() {
         HP = 350;
