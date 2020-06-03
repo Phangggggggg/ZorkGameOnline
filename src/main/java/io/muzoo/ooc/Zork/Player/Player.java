@@ -1,44 +1,31 @@
 package io.muzoo.ooc.Zork.Player;
 
+import io.muzoo.ooc.Zork.Item.Inventory;
+import io.muzoo.ooc.Zork.Map.Room;
+
 public class Player {
     private int HP;
     private int maxHP;
     private int attackMonster;
-    private boolean alive;
-    private String currentRoom;
+    private Room currentRoom;
+    private Inventory inventory;
 
     public Player() {
-        maxHP = 180;
-        HP = 180;
-        attackMonster = 60;
-        alive = true;
-        currentRoom = "Home";
+        maxHP = 200;
+        HP = 200;
+        attackMonster = 70;
+        inventory = new Inventory();
     }
 
-    public Player(int HP, int maxHP, int attackMonster, boolean alive, String currentRoom) {
+    public Player(int HP, int maxHP, int attackMonster,Room currentRoom) {
         this.HP = HP;
         this.maxHP = maxHP;
         this.attackMonster = attackMonster;
-        this.alive = alive;
         this.currentRoom = currentRoom;
     }
 
     public String getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void setCurrentRoom(String currentRoom) {
-        this.currentRoom = currentRoom;
-    }
-
-    public void addAttack(int attack){
-        attackMonster += attack;
-    }
-
-    public void addHP(int hp){
-        if (maxHP != HP){
-            HP += hp;
-        }
+        return currentRoom.getRoomName();
     }
 
     public int getHP() {
@@ -53,14 +40,26 @@ public class Player {
         return attackMonster;
     }
 
-    public boolean isAlive() {
-        return alive;
+
+    public Inventory getInventory() {
+        return inventory;
     }
 
-    public void increasePower(){
-        if (maxHP != HP){
-            HP =+ 10;
-        }
-        attackMonster+= 3;
+    public void updateHP(int newHP) {
+        this.HP = newHP;
     }
+
+    public void updateAttackMonster(int newAttack) {
+        this.attackMonster = newAttack;
+    }
+
+    public Room getLocation(){
+        return currentRoom;
+    }
+
+    public void updateLocation(Room newRoom){
+        this.currentRoom = newRoom;
+    }
+
+
 }

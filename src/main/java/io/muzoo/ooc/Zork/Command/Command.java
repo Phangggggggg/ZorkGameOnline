@@ -1,5 +1,9 @@
 package io.muzoo.ooc.Zork.Command;
 
-public abstract class Command {
-    public abstract Command getCommand();
+public interface Command {
+
+    void execute(String arg);
+
+    String getDescription();
+
 }

@@ -1,5 +1,7 @@
 package io.muzoo.ooc.Zork.Map;
 
+import io.muzoo.ooc.Zork.Item.Key;
+import io.muzoo.ooc.Zork.Item.Potion;
 import io.muzoo.ooc.Zork.Monster.BlueMonster;
 import io.muzoo.ooc.Zork.Monster.GoldMonster;
 import io.muzoo.ooc.Zork.Monster.RedMonster;
@@ -17,8 +19,6 @@ public class ReadFile {
     private int[] numLayer = new int[2];
     private int[] startIndex = new  int[2];
     private String id;
-
-
 
 
     public ReadFile(String fileName) {
@@ -53,7 +53,7 @@ public class ReadFile {
 
                 }
                 else{
-                    Room roomObj = new Room(neighboursList[neighboursList.length-1].trim(),
+                    Room roomObj = new Room(room,neighboursList[neighboursList.length-1].trim(),
                             Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
                     if (room.equals("Mysterious Cave I")){
                         roomObj.generateMonster(new BlueMonster());
@@ -63,6 +63,12 @@ public class ReadFile {
                     }
                     if (room.equals("Mysterious Cave III")){
                         roomObj.generateMonster(new RedMonster());
+                    }
+                    if(room.equals("Orge Cave I")){
+                        roomObj.generateItem(new Key());
+                    }
+                    if (roomObj.equals("Orge Cave II")){
+                        roomObj.generateItem(new Potion());
                     }
                     roomHashMap.put(room,roomObj);
                 }

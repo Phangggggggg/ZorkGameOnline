@@ -11,9 +11,7 @@ public abstract class Monster {
     protected String description;
     protected String name;
 
-    public Monster() {
 
-    }
 
     public Monster(int hp, int maxHP, int maxAttack, int attack) {
         this.hp = hp;

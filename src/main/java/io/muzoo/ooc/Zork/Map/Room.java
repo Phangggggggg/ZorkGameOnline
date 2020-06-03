@@ -13,13 +13,17 @@ public class Room {
     private boolean hasItem;
     private Monster monster;
     private Item item;
+    private String roomName;
 
 
-    public Room(String description, List<String> adjacentRooms) {
+    public Room(String roomName,String description, List<String> adjacentRooms) {
         this.description = description;
         this.adjacentRooms = adjacentRooms;
+        this.roomName = roomName;
         hasItem = false;
         hasMonster = false;
+
+
     }
 
     public boolean HasMonster() {
@@ -48,8 +52,9 @@ public class Room {
         hasItem = true;
     }
 
-
-
+    public String getRoomName() {
+        return roomName;
+    }
 
     public String getDescription() {
         return description;
