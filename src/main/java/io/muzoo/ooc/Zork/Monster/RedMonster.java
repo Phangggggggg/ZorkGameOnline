@@ -1,68 +1,56 @@
 package io.muzoo.ooc.Zork.Monster;
 
-public class RedMonster {
-    private int HP;
-    private int maxHP;
-    private int attackPlayer;
-    private boolean alive;
-    private int finalAttack;
-    private String location;
-
-    public RedMonster(){
-        maxHP = 100;
-        HP = 100;
-        attackPlayer = 50;
-        alive = true;
-        location = "Mysterious Cave III";
+public class RedMonster extends Monster {
+    public RedMonster() {
+        super(100,100,50,50);
+        name = "Red Monster";
+        description = "Red like Fire";
     }
 
-    public RedMonster(int HP, int maxHP, int attackMonster, boolean alive) {
-        this.HP = HP;
-        this.maxHP = maxHP;
-        this.attackPlayer = attackMonster;
-        this.alive = alive;
-        location = "Mysterious Cave III";
+    public RedMonster(int hp, int maxHP, int maxAttack, int attack) {
+        super(hp, maxHP, maxAttack, attack);
+        name = "Red Monster";
+        description = "Red like Fire";
     }
 
-    public int getHP() {
-        return HP;
-    }
-
-    public int getMaxHP() {
-        return maxHP;
-    }
-
-    public int setFinalAttack(){
-        double rand = Math.random();
-        if (rand <= 0.2){
-            finalAttack = 0;
+    @Override
+    public int attackPlayer() {
+        double attackProb = Math.random();
+        if (attackProb <= 0.02){
+            System.out.println("You are attacked by Red Monster ");
+            return maxAttack;
         }
-        else if (rand <= 0.5){
-            finalAttack = attackPlayer - attackPlayer/2;
+        else if (attackProb <= 0.1){
+            System.out.println("You are lucky!");
+            return 0;
         }
-        else if (rand <= 0.8){
-            finalAttack = attackPlayer;
+        else if (attackProb <= 0.4){
+            System.out.println("Prepare yourself, Red Monster is coming");
+            double rangeAttack = Math.random() * (15-5); // Math.random() * ( Max - Min )
+            return Math.toIntExact(Math.round(rangeAttack));
         }
-        return finalAttack;
-    }
-
-
-    public int getAttackMonster() {
-        return attackPlayer;
-    }
-
-    public boolean isAlive() {
-        return alive;
+        else if (attackProb <= 0.7){
+            System.out.println("Red Monster is about to attack you !!!");
+            double rangeAttack = Math.random() * (49-16);
+            return Math.toIntExact(Math.round(rangeAttack));
+        }
+        else{
+            System.out.println("Red monster is behind your back!");
+            return attack;
+        }
     }
 
     public void increasePower(){
-        if (HP == maxHP){
-            maxHP+=5;
-            HP+=5;
+        if (maxHP == hp){
+            maxHP += 2;
+            hp += 2;
         }
-        else {
-            HP+=5;
+        else if (hp < maxHP){
+            hp += 3;
+            maxHP +=3;
         }
-        attackPlayer+=2;
     }
+
+
+
 }

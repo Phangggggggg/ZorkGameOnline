@@ -1,4 +1,4 @@
-package io.muzoo.ooc.Zork.Parser;
+package io.muzoo.ooc.Zork.Command;
 
 import java.util.Scanner;
 

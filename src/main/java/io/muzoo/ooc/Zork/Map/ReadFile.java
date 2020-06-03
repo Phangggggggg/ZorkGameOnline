@@ -1,5 +1,9 @@
 package io.muzoo.ooc.Zork.Map;
 
+import io.muzoo.ooc.Zork.Monster.BlueMonster;
+import io.muzoo.ooc.Zork.Monster.GoldMonster;
+import io.muzoo.ooc.Zork.Monster.RedMonster;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -51,6 +55,15 @@ public class ReadFile {
                 else{
                     Room roomObj = new Room(neighboursList[neighboursList.length-1].trim(),
                             Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
+                    if (room.equals("Mysterious Cave I")){
+                        roomObj.generateMonster(new BlueMonster());
+                    }
+                    if (room.equals("Mysterious Cave II")){
+                        roomObj.generateMonster(new GoldMonster());
+                    }
+                    if (room.equals("Mysterious Cave III")){
+                        roomObj.generateMonster(new RedMonster());
+                    }
                     roomHashMap.put(room,roomObj);
                 }
 

@@ -8,15 +8,25 @@ public abstract class Item {
     protected int increaseAttack;
     protected String itemName;
 
-    public Item(String description, int increaseHP, int increaseAttack, String itemName) {
-        this.description = description;
+
+    public Item(int increaseHP, int increaseAttack) {
         this.increaseHP = increaseHP;
         this.increaseAttack = increaseAttack;
-        this.itemName = itemName;
     }
 
-    public abstract String getDescription();
-    public abstract void increasePlayerPower(Player player);
-    public abstract String getItemName();
+    public String getDescription() {
+        return description;
+    }
 
+    public int getIncreaseHP() {
+        return increaseHP;
+    }
+
+    public int getIncreaseAttack() {
+        return increaseAttack;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
 }
