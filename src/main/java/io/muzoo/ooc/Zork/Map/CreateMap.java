@@ -21,7 +21,9 @@ public class CreateMap {
         this.numLayer = numLayer;
         this.startIndex = startIndex;
         asciiMap = new String[numLayer[0]][numLayer[1]];
-        startingPoint = "Home";
+        if (id.contains("1")){
+            startingPoint = "Home";
+        }
         keep = new HashMap<>();
     }
 

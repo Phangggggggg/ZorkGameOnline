@@ -6,18 +6,27 @@ public class BlueMonster {
     private int attackPlayer;
     private boolean alive;
     private int finalAttack;
+    private String location;
     public BlueMonster() {
         HP = 200;
         maxHP = 200;
         attackPlayer = 75;
         alive = true;
+        location = "Mysterious Cave I";
     }
+
+
 
     public BlueMonster(int HP, int maxHP, int attackPlayer, boolean alive) {
         this.HP = HP;
         this.maxHP = maxHP;
         this.attackPlayer = attackPlayer;
         this.alive = alive;
+        location = "Mysterious Cave I";
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public int getHP() {

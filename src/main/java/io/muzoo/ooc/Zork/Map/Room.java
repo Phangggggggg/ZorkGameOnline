@@ -10,12 +10,15 @@ public class Room {
     private String east;
     private String south;
     private String west;
+    private boolean hasMonster;
 
 
     public Room(String description, List<String> adjacentRooms) {
         this.description = description;
         this.adjacentRooms = adjacentRooms;
     }
+
+
 
     public String getDescription() {
         return description;

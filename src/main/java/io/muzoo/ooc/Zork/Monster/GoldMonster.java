@@ -13,6 +13,11 @@ public class GoldMonster {
         maxHP = 350;
         attackPlayer = 80;
         alive = true;
+        location = "Mysterious Cave III";
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public GoldMonster(int HP, int maxHP, int attackPlayer, boolean alive) {
@@ -20,6 +25,7 @@ public class GoldMonster {
         this.maxHP = maxHP;
         this.attackPlayer = attackPlayer;
         this.alive = alive;
+        location = "Mysterious Cave II";
     }
 
     public int getHP() {

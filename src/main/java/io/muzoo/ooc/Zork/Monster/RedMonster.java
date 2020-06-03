@@ -6,12 +6,14 @@ public class RedMonster {
     private int attackPlayer;
     private boolean alive;
     private int finalAttack;
+    private String location;
 
     public RedMonster(){
         maxHP = 100;
         HP = 100;
         attackPlayer = 50;
         alive = true;
+        location = "Mysterious Cave III";
     }
 
     public RedMonster(int HP, int maxHP, int attackMonster, boolean alive) {
@@ -19,6 +21,7 @@ public class RedMonster {
         this.maxHP = maxHP;
         this.attackPlayer = attackMonster;
         this.alive = alive;
+        location = "Mysterious Cave III";
     }
 
     public int getHP() {
