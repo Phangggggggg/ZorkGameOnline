@@ -51,6 +51,11 @@ public class Room {
         this.item = item;
         hasItem = true;
     }
+    public void takeOut(){
+        hasItem = false;
+        item = null;
+    }
+
 
     public String getRoomName() {
         return roomName;

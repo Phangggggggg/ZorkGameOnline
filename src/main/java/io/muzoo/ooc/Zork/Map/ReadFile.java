@@ -1,5 +1,6 @@
 package io.muzoo.ooc.Zork.Map;
 
+import io.muzoo.ooc.Zork.Item.Garbage;
 import io.muzoo.ooc.Zork.Item.Key;
 import io.muzoo.ooc.Zork.Item.Potion;
 import io.muzoo.ooc.Zork.Monster.BlueMonster;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class ReadFile {
     private String fileName;
@@ -82,8 +84,29 @@ public class ReadFile {
         }
 
     }
+//    public static int generateRandomIntIntRange(int min, int max) {
+//        Random r = new Random();
+//        return r.nextInt((max - min) + 1) + min;
+//    }
 
-    public HashMap<String, Room> getRoomHashMap() {
+    public void addItemInRoom(int itemNum) {
+        setRoomHashMap();
+        for (int i = 0; i < itemNum; i++) {
+            Object randomName = roomHashMap.keySet().toArray()[new Random().nextInt(roomHashMap.keySet().toArray().length)];
+            if (!randomName.equals("Home")){
+//                System.out.println(randomName);
+                roomHashMap.get(randomName).generateItem(new Garbage());
+            }
+
+        }
+    }
+
+
+
+
+    public HashMap<String, Room> getRoomHashMap()
+    {
+        addItemInRoom(8);
         return roomHashMap;
     }
 
@@ -93,9 +116,7 @@ public class ReadFile {
 
     public static void main(String[] args) {
         ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
-        rf.setRoomHashMap();
         HashMap<String, Room> map = rf.getRoomHashMap();
-        System.out.println(map.size());
 
 
     }

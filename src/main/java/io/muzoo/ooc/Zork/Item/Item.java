@@ -2,6 +2,8 @@ package io.muzoo.ooc.Zork.Item;
 
 import io.muzoo.ooc.Zork.Player.Player;
 
+import java.util.ArrayList;
+
 public abstract class Item {
     protected String description;
     protected int increaseHP;
@@ -29,4 +31,6 @@ public abstract class Item {
     public String getItemName() {
         return itemName;
     }
+
+    public abstract ArrayList<Integer> use();
 }

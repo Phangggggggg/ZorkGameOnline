@@ -46,6 +46,11 @@ public abstract class Monster {
     public String getName() {
         return name;
     }
+    public void updateHP(int newHP) {
+        this.hp = newHP;
+    }
+
+
 
 
 }

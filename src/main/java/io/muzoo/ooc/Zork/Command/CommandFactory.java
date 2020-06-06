@@ -1,19 +1,24 @@
 package io.muzoo.ooc.Zork.Command;
 
+import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class CommandFactory {
-    private static Map<String, Command> commandMap = new HashMap<>();
+    public static Map<String, Command> commandMap = new HashMap<>();
 
 
-    public void putInCommand(Player player){
+    public static void putInCommand(Player player){
         commandMap.put("info", new InfoCommand(player));
+        commandMap.put("eat",new EatCommand(player));
+        commandMap.put("take",new TakeCommand(player));
+        commandMap.put("drop", new DropCommand(player));
 
     }
-    public Command getCommand(String cmd){
+    public Command getCommand(String cmd)
+    {
         return commandMap.get(cmd);
     }
     public boolean containCommand(String cmd){

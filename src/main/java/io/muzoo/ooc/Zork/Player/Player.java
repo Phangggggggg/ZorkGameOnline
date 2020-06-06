@@ -24,8 +24,8 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public String getCurrentRoom() {
-        return currentRoom.getRoomName();
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     public int getHP() {

@@ -15,7 +15,12 @@ public class InfoCommand implements Command {
     public void execute(String arg) {
         System.out.println("Your HP is" + player.getHP());
         System.out.println("Your attack value" + player.getAttackMonster());
-        System.out.println(player.getInventory().getDescription()+player.getInventory().getPlayerInventory());
+        if (player.getInventory().getPlayerInventory().isEmpty()){
+            System.out.println(player.getInventory().getDescription()+ "player inventory is empty");
+        }
+        else {
+            System.out.println(player.getInventory().getDescription() + player.getInventory().toString());
+        }
     }
 
     @Override
