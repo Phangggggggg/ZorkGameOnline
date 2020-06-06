@@ -117,6 +117,7 @@ public class ReadFile {
     public static void main(String[] args) {
         ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
         HashMap<String, Room> map = rf.getRoomHashMap();
+        System.out.println(rf.getRoomHashMap().containsKey("Home"));
 
 
     }

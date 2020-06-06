@@ -27,6 +27,9 @@ public class Player {
     public Room getCurrentRoom() {
         return currentRoom;
     }
+    public String getStringCurrentRoom(){
+        return currentRoom.getRoomName();
+    }
 
     public int getHP() {
         return HP;
