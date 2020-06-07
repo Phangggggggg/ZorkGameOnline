@@ -12,8 +12,8 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(String arg) {
-        if (player.getInventory().getThatItem(arg).equals(null)){
-            System.out.println("no such item in your inventory or you or ypu misspelled your item name");
+        if (player.getInventory().getThatItem(arg).equals(null)){ // bug
+            System.out.println("no such item in your inventory or you misspelled your item name");
         }
         else {
             player.getInventory().dropItem(arg);

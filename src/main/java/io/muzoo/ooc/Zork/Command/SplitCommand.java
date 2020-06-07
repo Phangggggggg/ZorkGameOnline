@@ -8,9 +8,10 @@ public class SplitCommand {
         if (cmdFactory.containCommand(commandOne)){
             cmdFactory.getCommand(commandOne).execute(commandTwo); // in case for go  north
         }
-
-
     }
+
+
+
 
 
 }

@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb4772ac-3001-48b0-8f92-7693e7219c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/GoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/Authentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/PlayCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/QuitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Game/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/CommandFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/CommandFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/SplitCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/SplitCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/TakeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Command/TakeCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/ReadFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/ReadFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Map/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/io/muzoo/ooc/Zork/Player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/DropCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/DropCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/MonsterAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/MonsterAttack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/SplitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Command/SplitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Map/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/muzoo/ooc/Zork/Game/Game.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,6 +219,7 @@
       <workItem from="1590555183300" duration="25153000" />
       <workItem from="1591161058978" duration="26272000" />
       <workItem from="1591427613133" duration="23261000" />
+      <workItem from="1591507807589" duration="15239000" />
     </task>
     <servers />
   </component>
