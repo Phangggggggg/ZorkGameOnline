@@ -11,17 +11,22 @@ import java.util.Map;
 public class CommandFactory {
     public static Map<String, Command> commandMap = new HashMap<>();
 
-
-    public static void putInCommand(Player player, Map<String, Room> roomMap, CommandFactory cmd, Simulation simulation){
+    public void putInCommand(Simulation simulation){
+        Player player = simulation.getPlayer();
+        Map<String,Room> roomMap = simulation.getRoomMap();
+        CommandFactory cmd = simulation.getCommandFactory();
+        Authentication authentication = simulation.getAuthentication();
         commandMap.put("info", new InfoCommand(player));
         commandMap.put("eat",new EatCommand(player));
         commandMap.put("take",new TakeCommand(player));
         commandMap.put("drop", new DropCommand(player));
         commandMap.put("go",new GoCommand(player,roomMap));
-        commandMap.put("initiateBattle", new InitiateBattle(cmd,player));
+        commandMap.put("initiateBattle", new InitiateBattle(cmd,player,authentication));
         commandMap.put("quit", new QuitCommand(simulation));
         commandMap.put("help", new HelpCommand(cmd));
-        
+        commandMap.put("play",new PlayCommand(simulation));
+        commandMap.put("exit", new ExitCommand(simulation));
+
 
     }
 

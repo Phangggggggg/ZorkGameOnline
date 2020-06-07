@@ -15,9 +15,11 @@ public class HelpCommand implements Command {
 
     @Override
     public void execute(String arg) {
-        for (Map.Entry <String, Command> commmandName : commandFactory.getCommandMap().entrySet()) {
-            System.out.println(commmandName + ": " + commmandName.getValue().getDescription());
+        for (String commandName: commandFactory.getCommandMap().keySet()) {
+            System.out.println(commandName + ": " + commandFactory.getCommandMap().get(commandName).getDescription());
+
         }
+
     }
 
     @Override

@@ -1,6 +1,10 @@
 package io.muzoo.ooc.Zork.Command;
 
 import io.muzoo.ooc.Zork.Game.Simulation;
+import io.muzoo.ooc.Zork.Monster.BlueMonster;
+import io.muzoo.ooc.Zork.Monster.GoldMonster;
+import io.muzoo.ooc.Zork.Monster.RedMonster;
+import io.muzoo.ooc.Zork.Player.Player;
 
 public class PlayCommand implements Command {
     private Simulation simulation;
@@ -13,6 +17,9 @@ public class PlayCommand implements Command {
     public void execute(String arg) {
         if (arg.equals("room2")){
             simulation.constructMap(arg,false); // successful constructing map
+            simulation.setPlayer(new Player());
+
+
         }
         else {
             System.out.println("Cannot find the map that has the same name as " + arg);

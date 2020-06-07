@@ -16,6 +16,6 @@ public class QuitCommand implements Command {
 
     @Override
     public String getDescription() {
-        return null;
+        return "This command is for quiting game";
     }
 }

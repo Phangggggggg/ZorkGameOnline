@@ -30,22 +30,20 @@ public class MonsterAttack {
             System.out.println("< attack");
             System.out.println("< eat key");
             System.out.println("< eat potion");
-            String command = parser.getCommand().split("/")[0];
-            if (authentication.getLimitCommand().get("AttackMonster").contains(command)){
-                cmd.getCommand(commandFactory,parser);
-                if (monster.getName().equals("Gold Monster")){
-                    int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                    System.out.println("Your current HP" + playerCurrentHp);
-                    player.updateHP(playerCurrentHp + 4);
-                }
-                else {
-                    int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                    System.out.println("Your current HP" + playerCurrentHp);
-                    player.updateHP(playerCurrentHp + 3);
-                }
+            cmd.getCommand(commandFactory,parser,"AttackMonster",authentication.getLimitCommand());
+            if (monster.getName().equals("Gold Monster")){
+                int playerCurrentHp = player.getHP() - monster.attackPlayer();
+                System.out.println("Your current HP" + playerCurrentHp);
+                player.updateHP(playerCurrentHp + 4);
             }
+            else {
+                int playerCurrentHp = player.getHP() - monster.attackPlayer();
+                System.out.println("Your current HP" + playerCurrentHp);
+                player.updateHP(playerCurrentHp + 3);
+            }
+        }
 
         }
 
     }
-}
+

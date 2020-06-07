@@ -6,18 +6,20 @@ import io.muzoo.ooc.Zork.Player.Player;
 public class InitiateBattle implements Command{
     private CommandFactory cmdFactory;
     private Player player;
+    private Authentication authentication;
 
-    public InitiateBattle(CommandFactory cmdFactory, Player player) {
+    public InitiateBattle(CommandFactory cmdFactory, Player player, Authentication authentication) {
         this.cmdFactory = cmdFactory;
         this.player = player;
+        this.authentication = authentication;
     }
 
     @Override
     public void execute(String arg) {
         if (player.getCurrentRoom().HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
-            CommandFactory.commandMap.put("attack",new AttackCommand(player,monster));
-            MonsterAttack battle = new MonsterAttack(player,monster,cmdFactory);
+            cmdFactory.getCommandMap().put("attack",new AttackCommand(player,monster));
+            MonsterAttack battle = new MonsterAttack(player,monster,cmdFactory,authentication);
             battle.fighting();
         }
         else {

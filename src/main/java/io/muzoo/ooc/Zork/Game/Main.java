@@ -7,7 +7,8 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         CommandFactory commandFactory = new CommandFactory();
-        Game game = new Game(commandFactory);
-        game.play();
+        Simulation simulation = new Simulation(commandFactory);
+        commandFactory.putInCommand(simulation);
+        simulation.play();
     }
 }

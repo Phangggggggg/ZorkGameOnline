@@ -28,6 +28,7 @@ public class Simulation {
 
 
     public Simulation(CommandFactory commandFactory) {
+        exit = new ArrayList<>();
         quit = false;
         this.commandFactory = commandFactory;
         parser = new Parser();
@@ -64,9 +65,47 @@ public class Simulation {
         }
     }
 
+    public Authentication getAuthentication() {
+        return authentication;
+    }
 
 
 
+    public boolean isQuit() {
+        return quit;
+    }
+
+    public List<Boolean> getExit() {
+        return exit;
+    }
+
+    public CommandFactory getCommandFactory() {
+        return commandFactory;
+    }
+
+    public Parser getParser() {
+        return parser;
+    }
+
+    public SplitCommand getCommand() {
+        return command;
+    }
+
+    public ReadFile getReadFile() {
+        return readFile;
+    }
+
+    public String getMapId() {
+        return mapId;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public Map<String, Room> getRoomMap() {
+        return roomMap;
+    }
 
     public void checkGameFinish(){
         if (player.getCurrentRoom().HasMonster()){
@@ -95,27 +134,27 @@ public class Simulation {
 
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setExit(int index, boolean bool) {  // set clear game
+        exit.set(index,bool);
+    }
+
     public void play(){
+        System.out.println("Welcome to Zork!");
         while (!quit){
-            String cmd1 = parser.getCommand().split("/")[0];
-            if (authentication.getLimitCommand().get("MainMenu").contains(cmd1)) {
-                command.getCommand(commandFactory, parser);
-        }
-            else {
-                System.out.println("This command is not available in Main Menu");
-            }
+            command.getCommand(commandFactory,parser,"MainMenu",authentication.getLimitCommand());
             while (!exit.contains(true)){
-                String c1 = parser.getCommand().split("/")[0];
-                if (authentication.getLimitCommand().get("Game").contains(c1)){
-                    command.getCommand(commandFactory,parser);
-                }
+                command.getCommand(commandFactory,parser,"Game",authentication.getLimitCommand());
                 checkGameFinish();
                 upgradeMonsterPower();
                 player.updateHP(3);// update hp of player
-            }
-            if (player.getHP() <= 0){
-                System.out.println("You lost");
-                exit.set(1,true);
+                if (player.getHP() <= 0){
+                    System.out.println("You lost");
+                    exit.set(1,true);
+                }
             }
 
         }
