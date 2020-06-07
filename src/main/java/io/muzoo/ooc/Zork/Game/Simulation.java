@@ -1,16 +1,14 @@
 package io.muzoo.ooc.Zork.Game;
 
 import io.muzoo.ooc.Zork.Command.*;
+import io.muzoo.ooc.Zork.Map.CreateMap;
 import io.muzoo.ooc.Zork.Map.ReadFile;
 import io.muzoo.ooc.Zork.Map.Room;
 import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Simulation {
     private Authentication authentication;
@@ -22,9 +20,10 @@ public class Simulation {
     private SplitCommand command;
     private ReadFile readFile;
     private String mapId;
-
     private int count;
     private Map<String, Room> roomMap;
+    private CreateMap createMap;
+    private Room startRoom;
 
 
     public Simulation(CommandFactory commandFactory) {
@@ -37,14 +36,22 @@ public class Simulation {
         exit.add(true);
         exit.add(false);
         count = 0;
+
     }
     public void constructMap(String filePath,boolean bool){
         String defaultPath =  "/Users/phang/Desktop/Zork/src/main/resources/";
         readFile = new ReadFile(defaultPath + filePath + ".txt");
-        mapId = readFile.getId();
         roomMap = readFile.getRoomHashMap();
+        startRoom = roomMap.get("Home");
+        mapId = readFile.getId();
+        createMap = new CreateMap(readFile.getNumLayer(),readFile.getStartIndex(),readFile.getRoomHashMap(),mapId);
+        commandFactory.getCommandMap().put("map",new MapCommand(createMap));
         exit.set(0,bool); // has map
 
+    }
+
+    public Room getStartRoom() {
+        return startRoom;
     }
 
     public boolean isHasMap() {
@@ -53,6 +60,7 @@ public class Simulation {
 
     public void setPlayer(Player player){
         this.player = player;
+
     }
 
     public void upgradeMonsterPower(){

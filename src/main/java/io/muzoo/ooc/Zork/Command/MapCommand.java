@@ -4,15 +4,15 @@ import io.muzoo.ooc.Zork.Map.CreateMap;
 import io.muzoo.ooc.Zork.Map.ReadFile;
 
 public class MapCommand implements Command{
-    private CreateMap Map;
+    private CreateMap createMap;
 
-    public MapCommand(CreateMap map) {
-        Map = map;
+    public MapCommand(CreateMap createMap) {
+        this.createMap = createMap;
     }
 
     @Override
     public void execute(String arg) {
-        Map.getAsciiMap();
+        createMap.getAsciiMap();
     }
 
     @Override
