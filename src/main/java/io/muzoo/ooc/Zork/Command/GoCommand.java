@@ -23,27 +23,27 @@ public class GoCommand implements Command {
             String roomNorth = player.getCurrentRoom().getNorth();
             Room roomObj = Map.get(roomNorth);
             player.updateLocation(roomObj);
-            System.out.println("North" + roomNorth);
+            System.out.println("North room is " + roomNorth);
         }
         else if (arg.equals("south")){
             String roomSouth = player.getCurrentRoom().getSouth();
             Room roomObj = Map.get(roomSouth);
             player.updateLocation(roomObj);
-            System.out.println("South " + roomSouth);
+            System.out.println("South room is " + roomSouth);
 
         }
         else if (arg.equals("west")){
             String roomWest = player.getCurrentRoom().getWest();
             Room roomObj = Map.get(roomWest);
             player.updateLocation(roomObj);
-            System.out.println("West " + roomWest);
+            System.out.println("West room is " + roomWest);
 
         }
         else if (arg.equals("east")){
             String roomEast = player.getCurrentRoom().getEast();
             Room roomObj = Map.get(roomEast);
             player.updateLocation(roomObj);
-            System.out.println("East " + roomEast);
+            System.out.println("East room is " + roomEast);
 
 
         }

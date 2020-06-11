@@ -3,12 +3,16 @@ package io.muzoo.ooc.Zork.Player;
 import io.muzoo.ooc.Zork.Item.Inventory;
 import io.muzoo.ooc.Zork.Map.Room;
 
+import java.util.List;
+
 public class Player {
     private int HP;
     private int maxHP;
     private int attackMonster;
     private Room currentRoom;
     private Inventory inventory;
+    private List<String> adjacentRoom;
+    private Room twoBack;
 
     public Player() {
         maxHP = 200;
@@ -24,12 +28,18 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
+    public List<String> getAdjacentRoom() {
+        return currentRoom.getAdjacentRooms();
+    }
+
     public Room getCurrentRoom() {
         return currentRoom;
     }
     public String getStringCurrentRoom(){
         return currentRoom.getRoomName();
     }
+
+
 
     public int getHP() {
         return HP;

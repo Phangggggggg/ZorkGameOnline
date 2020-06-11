@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class ReadFile {
+public class ReadFile{
     private String fileName;
     private HashMap<String, Room> roomHashMap = new HashMap<>();
     private int[] numLayer = new int[2];
@@ -109,15 +109,20 @@ public class ReadFile {
         return roomHashMap;
     }
 
+    public void getAsciiMap(){
+        CreateMap cm = new CreateMap(numLayer,startIndex,roomHashMap,id);
+        cm.getAsciiMap();
+    }
+
     public String getId() {
         return id;
     }
 
-//    public static void main(String[] args) {
-//        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
-//        HashMap<String, Room> map = rf.getRoomHashMap();
-//        System.out.println(rf.getRoomHashMap().containsKey("Home"));
-//
-//
-//    }
+    public static void main(String[] args) {
+        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
+        HashMap<String, Room> map = rf.getRoomHashMap();
+        rf.getAsciiMap();
+
+
+    }
 }

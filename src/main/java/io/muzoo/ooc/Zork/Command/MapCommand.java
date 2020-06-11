@@ -4,9 +4,9 @@ import io.muzoo.ooc.Zork.Map.CreateMap;
 import io.muzoo.ooc.Zork.Map.ReadFile;
 
 public class MapCommand implements Command{
-    private CreateMap createMap;
+    private ReadFile createMap;
 
-    public MapCommand(CreateMap createMap) {
+    public MapCommand(ReadFile createMap) {
         this.createMap = createMap;
     }
 

@@ -1,13 +1,10 @@
 package io.muzoo.ooc.Zork.Game;
 
 import io.muzoo.ooc.Zork.Command.*;
-import io.muzoo.ooc.Zork.Map.CreateMap;
 import io.muzoo.ooc.Zork.Map.ReadFile;
 import io.muzoo.ooc.Zork.Map.Room;
 import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
-
-import java.io.IOException;
 import java.util.*;
 
 public class Simulation {
@@ -22,7 +19,6 @@ public class Simulation {
     private String mapId;
     private int count;
     private Map<String, Room> roomMap;
-    private CreateMap createMap;
     private Room startRoom;
 
 
@@ -44,10 +40,8 @@ public class Simulation {
         roomMap = readFile.getRoomHashMap();
         startRoom = roomMap.get("Home");
         mapId = readFile.getId();
-        createMap = new CreateMap(readFile.getNumLayer(),readFile.getStartIndex(),readFile.getRoomHashMap(),mapId);
-        commandFactory.getCommandMap().put("map",new MapCommand(createMap));
+        commandFactory.getCommandMap().put("map",new MapCommand(readFile));
         exit.set(0,bool); // has map
-
     }
 
     public Room getStartRoom() {
@@ -115,8 +109,8 @@ public class Simulation {
         return roomMap;
     }
 
-    public void checkGameFinish(){
-        if (player.getCurrentRoom().HasMonster()){
+    public void helperCheckFinish(Room currentRoom){
+        if (currentRoom.HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
             String nameMonster = monster.getName();
             if (nameMonster.equals("Red Monster") && monster.getHp() <= 0){
@@ -128,8 +122,35 @@ public class Simulation {
             if (nameMonster.equals("Blue Monster") && monster.getHp() <=0){
                 count+=1;
             }
+        }
+
+    }
+
+    public void checkGameFinish(){
+        System.out.println(player.getCurrentRoom().getAdjacentRooms());
+        if (player.getCurrentRoom().getAdjacentRooms().contains("Corner") ||
+                player.getCurrentRoom().getAdjacentRooms().contains("Block")){
+            if (player.getCurrentRoom().getSouth().equals("Corner") ||
+                    player.getCurrentRoom().getSouth().equals("Corner")){
+                helperCheckFinish(player.getCurrentRoom());}
+            if (player.getCurrentRoom().getNorth().equals("Corner") ||
+                    player.getCurrentRoom().getNorth().equals("Block")){
+                helperCheckFinish(player.getCurrentRoom());}
+            if (player.getCurrentRoom().getEast().equals("Corner") ||
+                    player.getCurrentRoom().getEast().equals("Block")) {
+                helperCheckFinish(player.getCurrentRoom());
+            }
+            if (player.getCurrentRoom().getWest().equals("Corner") ||
+                    player.getCurrentRoom().equals("Block")){
+                helperCheckFinish(player.getCurrentRoom());
+            }
 
         }
+        else {
+            helperCheckFinish(player.getCurrentRoom());
+        }
+
+
         if (count == 3){
             exit.set(1,true);
         }
@@ -137,6 +158,8 @@ public class Simulation {
 
 
     }
+
+
     public void setQuit(boolean bool){
         quit = bool;
 

@@ -69,6 +69,7 @@ public class Room {
         return adjacentRooms;
     }
 
+
     public String getNorth() {
         return adjacentRooms.get(0);
     }
