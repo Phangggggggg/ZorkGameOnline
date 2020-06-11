@@ -16,6 +16,7 @@ public class Room {
     private String roomName;
 
 
+
     public Room(String roomName,String description, List<String> adjacentRooms) {
         this.description = description;
         this.adjacentRooms = adjacentRooms;
@@ -24,6 +25,22 @@ public class Room {
         hasMonster = false;
 
 
+    }
+
+    public String getNeighbour(String direction){
+        if (direction.equals("north")){
+            return adjacentRooms.get(0);
+        }
+        else if (direction.equals("south")){
+            return  adjacentRooms.get(3);
+        }
+        else if (direction.equals("west")){
+            return adjacentRooms.get(1);
+        }
+        else if (direction.equals("east")){
+            return adjacentRooms.get(2);
+        }
+        return "You missed spell";
     }
 
     public boolean HasMonster() {

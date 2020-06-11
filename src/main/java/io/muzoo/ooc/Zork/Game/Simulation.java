@@ -109,8 +109,11 @@ public class Simulation {
         return roomMap;
     }
 
-    public void helperCheckFinish(Room currentRoom){
-        if (currentRoom.HasMonster()){
+
+
+    public void checkGameFinish(){
+        Room currentRoom = player.getCurrentRoom();
+        if (player.getCurrentRoom().HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
             String nameMonster = monster.getName();
             if (nameMonster.equals("Red Monster") && monster.getHp() <= 0){
@@ -122,32 +125,6 @@ public class Simulation {
             if (nameMonster.equals("Blue Monster") && monster.getHp() <=0){
                 count+=1;
             }
-        }
-
-    }
-
-    public void checkGameFinish(){
-        System.out.println(player.getCurrentRoom().getAdjacentRooms());
-        if (player.getCurrentRoom().getAdjacentRooms().contains("Corner") ||
-                player.getCurrentRoom().getAdjacentRooms().contains("Block")){
-            if (player.getCurrentRoom().getSouth().equals("Corner") ||
-                    player.getCurrentRoom().getSouth().equals("Corner")){
-                helperCheckFinish(player.getCurrentRoom());}
-            if (player.getCurrentRoom().getNorth().equals("Corner") ||
-                    player.getCurrentRoom().getNorth().equals("Block")){
-                helperCheckFinish(player.getCurrentRoom());}
-            if (player.getCurrentRoom().getEast().equals("Corner") ||
-                    player.getCurrentRoom().getEast().equals("Block")) {
-                helperCheckFinish(player.getCurrentRoom());
-            }
-            if (player.getCurrentRoom().getWest().equals("Corner") ||
-                    player.getCurrentRoom().equals("Block")){
-                helperCheckFinish(player.getCurrentRoom());
-            }
-
-        }
-        else {
-            helperCheckFinish(player.getCurrentRoom());
         }
 
 

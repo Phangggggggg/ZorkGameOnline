@@ -33,12 +33,13 @@ public class PlayCommand implements Command {
             player.updateLocation(start);
             System.out.println("Player is at " + start.getRoomName());
             System.out.println("If it is corner or block, you can not go enter that room");
+            commandFactory.getCommandMap().put("go",new GoCommand(player,simulation.getRoomMap()));
             commandFactory.getCommandMap().put("info",new InfoCommand(player));
             commandFactory.getCommandMap().put("eat",new EatCommand(player));
             commandFactory.getCommandMap().put("take",new TakeCommand(player));
             commandFactory.getCommandMap().put("drop", new DropCommand(player));
-            commandFactory.getCommandMap().put("go",new GoCommand(player,simulation.getRoomMap()));
-            commandFactory.getCommandMap().put("initiateBattle", new InitiateBattle(simulation.getCommandFactory(),player,simulation.getAuthentication()));
+            commandFactory.getCommandMap().put("initiateBattle",
+                    new InitiateBattle(simulation.getCommandFactory(),player,simulation.getAuthentication()));
         }
         else {
             System.out.println("Cannot find the map that has the same name as " + arg);

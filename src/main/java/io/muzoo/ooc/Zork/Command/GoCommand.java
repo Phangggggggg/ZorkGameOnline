@@ -5,53 +5,51 @@ import io.muzoo.ooc.Zork.Map.ReadFile;
 import io.muzoo.ooc.Zork.Map.Room;
 import io.muzoo.ooc.Zork.Player.Player;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GoCommand implements Command {
     private Player player;
     private Map<String,Room> Map;
+    private List<String> direction;
+
 
     public GoCommand(Player player, Map<String, Room> map) {
         this.player = player;
         this.Map = map;
+        direction = new ArrayList<>();
+        direction.add("north");
+        direction.add("south");
+        direction.add("west");
+        direction.add("east");
+
+
+
     }
 
     @Override
     public void execute(String arg) {
-        if (arg.equals("north")){
-            String roomNorth = player.getCurrentRoom().getNorth();
-            Room roomObj = Map.get(roomNorth);
-            player.updateLocation(roomObj);
-            System.out.println("North room is " + roomNorth);
-        }
-        else if (arg.equals("south")){
-            String roomSouth = player.getCurrentRoom().getSouth();
-            Room roomObj = Map.get(roomSouth);
-            player.updateLocation(roomObj);
-            System.out.println("South room is " + roomSouth);
-
-        }
-        else if (arg.equals("west")){
-            String roomWest = player.getCurrentRoom().getWest();
-            Room roomObj = Map.get(roomWest);
-            player.updateLocation(roomObj);
-            System.out.println("West room is " + roomWest);
-
-        }
-        else if (arg.equals("east")){
-            String roomEast = player.getCurrentRoom().getEast();
-            Room roomObj = Map.get(roomEast);
-            player.updateLocation(roomObj);
-            System.out.println("East room is " + roomEast);
-
-
+        if (!direction.contains(arg)){
+            System.out.println("You may be misspelled");
         }
         else {
-            System.out.println("maybe you spell something wrong");
+            if (!player.getCurrentRoom().getNeighbour(arg).equals("Corner")
+                    && !player.getCurrentRoom().getNeighbour(arg).equals("Block")){
+                String nextRoom = player.getLocation().getNeighbour(arg);
+                player.updateLocation(Map.get(nextRoom));
+                System.out.println("You are at " + player.getCurrentRoom().getRoomName());
+
+            }
+            else {
+                System.out.println("This is either block or corner");
+            }
+
         }
 
     }
+
 
     @Override
     public String getDescription() {
