@@ -26,13 +26,11 @@ public class PlayCommand implements Command {
         if (arg.equals("room2")){
             simulation.constructMap(arg,false); // successful constructing map
             start = simulation.getStartRoom();
-            System.out.println("Map is already created");
             Player player = new Player();
             simulation.setPlayer(player);
-            System.out.println("Player is already created");
+            System.out.println("Player and Map are already created");
             player.updateLocation(start);
             System.out.println("Player is at " + start.getRoomName());
-            System.out.println("If it is corner or block, you can not go enter that room");
             commandFactory.getCommandMap().put("go",new GoCommand(player,simulation.getRoomMap()));
             commandFactory.getCommandMap().put("info",new InfoCommand(player));
             commandFactory.getCommandMap().put("eat",new EatCommand(player));

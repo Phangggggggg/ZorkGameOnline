@@ -32,16 +32,25 @@ public class Authentication {
        attackMonster.add("drop");
        attackMonster.add("eat");
        attackMonster.add("info");
+       attackMonster.add("map");
+       attackMonster.add("quit");
+       attackMonster.add("help");
+       attackMonster.add("initiateBattle");
+       attackMonster.add("escape");
        limitCommand.put("MainMenu",mainMenu);
        limitCommand.put("Game",game);
        limitCommand.put("AttackMonster",attackMonster);
-
     }
 
 
     public Map<String, ArrayList<String>> getLimitCommand() {
         setLimitCommand();
         return limitCommand;
+    }
+
+    public static void main(String[] args) {
+        Authentication au = new Authentication();
+        System.out.println(au.getLimitCommand());
     }
 
 

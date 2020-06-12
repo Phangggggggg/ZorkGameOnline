@@ -27,7 +27,7 @@ public class Inventory {
     }
     public void takeItem(String item){
         playerInventory.add(item);
-        System.out.println(item + "is already in your inventory");
+        System.out.println(item + " is already in your inventory");
     }
 
     public ArrayList<String> getPlayerInventory() {

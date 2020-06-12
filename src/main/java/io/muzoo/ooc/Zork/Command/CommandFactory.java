@@ -21,7 +21,6 @@ public class CommandFactory {
         commandMap.put("play",new PlayCommand(simulation,cmd));
         commandMap.put("exit", new ExitCommand(simulation));
 
-
     }
 
     public  Map<String, Command> getCommandMap() {

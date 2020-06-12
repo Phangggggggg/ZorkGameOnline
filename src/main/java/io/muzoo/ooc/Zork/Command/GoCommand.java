@@ -40,6 +40,15 @@ public class GoCommand implements Command {
                 String nextRoom = player.getLocation().getNeighbour(arg);
                 player.updateLocation(Map.get(nextRoom));
                 System.out.println("You are at " + player.getCurrentRoom().getRoomName());
+                player.getHP();
+                if (Map.get(nextRoom).HasMonster()){
+                    System.out.println("There is monster in this room, if you want to attack, Type initiateBattle");
+                }
+                if (Map.get(nextRoom).HasItem()){
+                    Room room = Map.get(nextRoom);
+                    System.out.println("There is an item in this room");
+                    System.out.println("The item is " + room.getItem().getItemName() + "/ " + room.getItem().getDescription());
+                }
 
             }
             else {

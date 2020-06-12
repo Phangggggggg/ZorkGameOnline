@@ -11,6 +11,8 @@ public class MonsterAttack {
     private CommandFactory commandFactory;
     private SplitCommand cmd;
     private Authentication authentication;
+    private Boolean escape;
+
 
     public MonsterAttack(Player player, Monster monster, CommandFactory commandFactory, Authentication authentication) {
         this.player = player;
@@ -19,6 +21,11 @@ public class MonsterAttack {
         parser = new Parser();
         cmd = new SplitCommand();
         this.authentication = authentication;
+        escape = false;
+    }
+
+    public void setEscape(Boolean escape) {
+        this.escape = true;
     }
 
     public void fighting(){
@@ -30,18 +37,23 @@ public class MonsterAttack {
             System.out.println("< attack");
             System.out.println("< eat key");
             System.out.println("< eat potion");
+            System.out.println("< escape from Monster");
             cmd.getCommand(commandFactory,parser,"AttackMonster",authentication.getLimitCommand());
+            if (escape){
+                break;
+            }
             if (monster.getName().equals("Gold Monster")){
                 int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                System.out.println("Your current HP" + playerCurrentHp);
-                player.updateHP(playerCurrentHp + 4);
+                System.out.println("Your current HP " + playerCurrentHp);
+                player.updateHP(-playerCurrentHp);
             }
             else {
                 int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                System.out.println("Your current HP" + playerCurrentHp);
-                player.updateHP(playerCurrentHp + 3);
+                System.out.println("Your current HP " + playerCurrentHp);
+                player.updateHP(-playerCurrentHp);
             }
         }
+        System.out.println("out of attack Monster loop");
 
         }
 

@@ -18,8 +18,9 @@ public class InitiateBattle implements Command{
     public void execute(String arg) {
         if (player.getCurrentRoom().HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
-            cmdFactory.getCommandMap().put("attack",new AttackCommand(player,monster));
             MonsterAttack battle = new MonsterAttack(player,monster,cmdFactory,authentication);
+            cmdFactory.getCommandMap().put("attack",new AttackCommand(player,monster));
+            cmdFactory.getCommandMap().put("escape",new EscapeCommand(battle));
             battle.fighting();
         }
         else {

@@ -40,6 +40,7 @@ public class Simulation {
         roomMap = readFile.getRoomHashMap();
         startRoom = roomMap.get("Home");
         mapId = readFile.getId();
+        System.out.println(mapId);
         commandFactory.getCommandMap().put("map",new MapCommand(readFile));
         exit.set(0,bool); // has map
     }

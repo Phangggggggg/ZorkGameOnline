@@ -19,10 +19,14 @@ public class EatCommand implements Command {
         Item playerItem = player.getInventory().getThatItem(arg);
         if (playerItem != null){
             Integer hp = playerItem.use().get(0);
+            System.out.println("Increase Hp " + hp);
             Integer attack = playerItem.use().get(1);
+            System.out.println("Increase attack " + attack);
             player.updateHP(hp);
             player.updateAttackMonster(attack);
-            System.out.println("That "+ arg + "has already been used it");
+            System.out.println("That "+ arg + "  is already eaten by you");
+            player.getInventory().dropItem(arg);
+
         }
         else {
             System.out.println("no such item in your inventory");

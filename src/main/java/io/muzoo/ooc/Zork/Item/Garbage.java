@@ -6,7 +6,7 @@ public class Garbage extends Item {
     public Garbage() {
         super(0,0);
         itemName = "Garbage";
-        description = "This is Garbage";
+        description = "Garbage is nonsense";
     }
 
     @Override

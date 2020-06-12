@@ -58,12 +58,24 @@ public class Player {
         return inventory;
     }
 
+    public List<String> displayInventory(){
+        return inventory.getPlayerInventory();
+    }
+
     public void updateHP(int newHP) {
-        this.HP = newHP;
+        if (HP < maxHP){
+            HP = HP + newHP;
+        }
+        else {
+            maxHP = maxHP + newHP;
+            HP = HP + newHP;
+        }
+
+
     }
 
     public void updateAttackMonster(int newAttack) {
-        this.attackMonster = newAttack;
+        attackMonster += newAttack;
     }
 
     public Room getLocation(){

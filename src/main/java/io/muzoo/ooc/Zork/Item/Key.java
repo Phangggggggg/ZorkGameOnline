@@ -15,7 +15,7 @@ public class Key extends Item {
     public Key(int increaseHP, int increaseAttack) {
         super(increaseHP, increaseAttack);
         itemName = "Key";
-        description = "The Key";
+        description = "The Key increases attack and HP";
     }
 
     @Override

@@ -24,6 +24,7 @@ public class ReadFile{
 
 
     public ReadFile(String fileName) {
+
         this.fileName = fileName;
     }
 
