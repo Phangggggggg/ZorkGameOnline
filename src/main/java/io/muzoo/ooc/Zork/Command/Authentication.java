@@ -20,6 +20,7 @@ public class Authentication {
        mainMenu.add("quit");
        mainMenu.add("help");
        game.add("exit");
+       game.add("quit");
        game.add("map");
        game.add("take");
        game.add("drop");

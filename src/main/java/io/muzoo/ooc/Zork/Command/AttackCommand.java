@@ -18,7 +18,7 @@ public class AttackCommand implements Command{
     @Override
     public void execute(String arg) {
         System.out.println(description);
-        monster.updateHP(monster.getHp() - player.getAttackMonster());
+        monster.updateHP(- player.getAttackMonster());
     }
 
     @Override

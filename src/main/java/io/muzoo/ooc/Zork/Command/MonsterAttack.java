@@ -30,8 +30,8 @@ public class MonsterAttack {
 
     public void fighting(){
         System.out.println(monster.getName() + " is come for your life");
-        System.out.println(monster.getName()+ " has hp" + monster.getHp());
-        System.out.println("Your hp is" + player.getHP());
+        System.out.println(monster.getName()+ " has hp " + monster.getHp());
+        System.out.println("Your hp is " + player.getHP());
         while (monster.getHp() > 0 && player.getHP() > 0){
             System.out.println("What would you do?");
             System.out.println("< attack");
@@ -42,17 +42,12 @@ public class MonsterAttack {
             if (escape){
                 break;
             }
-            if (monster.getName().equals("Gold Monster")){
-                int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                System.out.println("Your current HP " + playerCurrentHp);
-                player.updateHP(-playerCurrentHp);
+            player.updateHP(-monster.attackPlayer());
+            System.out.println("Your current HP " + player.getHP());
+            System.out.println(monster.getName() + " has hp of " + monster.getHp());
+
             }
-            else {
-                int playerCurrentHp = player.getHP() - monster.attackPlayer();
-                System.out.println("Your current HP " + playerCurrentHp);
-                player.updateHP(-playerCurrentHp);
-            }
-        }
+
         System.out.println("out of attack Monster loop");
 
         }

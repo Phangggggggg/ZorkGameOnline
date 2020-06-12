@@ -113,18 +113,20 @@ public class Simulation {
 
 
     public void checkGameFinish(){
-        Room currentRoom = player.getCurrentRoom();
         if (player.getCurrentRoom().HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
             String nameMonster = monster.getName();
             if (nameMonster.equals("Red Monster") && monster.getHp() <= 0){
                 count +=1;
+                player.getCurrentRoom().removeMonster();
             }
             if (nameMonster.equals("Gold Monster") && monster.getHp() <= 0){
                 count +=1;
+                player.getCurrentRoom().removeMonster();
             }
             if (nameMonster.equals("Blue Monster") && monster.getHp() <=0){
                 count+=1;
+                player.getCurrentRoom().removeMonster();
             }
         }
 

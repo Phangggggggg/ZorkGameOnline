@@ -10,10 +10,7 @@ import io.muzoo.ooc.Zork.Monster.RedMonster;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class ReadFile{
     private String fileName;
@@ -21,6 +18,7 @@ public class ReadFile{
     private int[] numLayer = new int[2];
     private int[] startIndex = new  int[2];
     private String id;
+    private List<String> monsterItem = new ArrayList<>();
 
 
     public ReadFile(String fileName) {
@@ -60,18 +58,23 @@ public class ReadFile{
                             Arrays.asList(Arrays.copyOf(neighboursList,neighboursList.length-1)));
                     if (room.equals("Mysterious Cave I")){
                         roomObj.generateMonster(new BlueMonster());
+                        monsterItem.add(room);
                     }
                     if (room.equals("Mysterious Cave II")){
                         roomObj.generateMonster(new GoldMonster());
+                        monsterItem.add(room);
                     }
                     if (room.equals("Mysterious Cave III")){
                         roomObj.generateMonster(new RedMonster());
+                        monsterItem.add(room);
                     }
                     if(room.equals("Orge Cave I")){
                         roomObj.generateItem(new Key());
+                        monsterItem.add(room);
                     }
-                    if (roomObj.equals("Orge Cave II")){
+                    if (room.equals("Orge Cave II")){
                         roomObj.generateItem(new Potion());
+                        monsterItem.add(room);
                     }
                     roomHashMap.put(room,roomObj);
                 }
@@ -92,13 +95,18 @@ public class ReadFile{
 
     public void addItemInRoom(int itemNum) {
         setRoomHashMap();
+        Set<Object> repeat = new HashSet<>();
         for (int i = 0; i < itemNum; i++) {
             Object randomName = roomHashMap.keySet().toArray()[new Random().nextInt(roomHashMap.keySet().toArray().length)];
-            if (!randomName.equals("Home")){
-//                System.out.println(randomName);
-                roomHashMap.get(randomName).generateItem(new Garbage());
+            if (!randomName.equals("Home") && !monsterItem.contains(randomName)) {
+                repeat.add(randomName);
             }
         }
+        for (Object obj: repeat) {
+            roomHashMap.get(obj).generateItem(new Garbage());
+        }
+
+
     }
 
 
@@ -119,11 +127,11 @@ public class ReadFile{
         return id;
     }
 
-    public static void main(String[] args) {
-        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
-        HashMap<String, Room> map = rf.getRoomHashMap();
-        rf.getAsciiMap();
-
-
-    }
+//    public static void main(String[] args) {
+//        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
+//        HashMap<String, Room> map = rf.getRoomHashMap();
+//        System.out.println(rf.monsterItem);
+//
+//
+//    }
 }

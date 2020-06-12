@@ -68,9 +68,14 @@ public class Room {
         this.item = item;
         hasItem = true;
     }
-    public void takeOut(){
+    public void takeOut(){ //removeItem
         hasItem = false;
         item = null;
+    }
+    public void removeMonster(){
+        hasMonster = false;
+        monster = null;
+
     }
 
 

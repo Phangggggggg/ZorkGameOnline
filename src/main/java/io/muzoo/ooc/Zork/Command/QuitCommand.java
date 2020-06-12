@@ -11,6 +11,7 @@ public class QuitCommand implements Command {
 
     @Override
     public void execute(String arg) {
+        simulation.setExit(1,true);
         simulation.setQuit(true);
     }
 

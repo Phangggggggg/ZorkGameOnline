@@ -47,7 +47,7 @@ public abstract class Monster {
         return name;
     }
     public void updateHP(int newHP) {
-        this.hp = newHP;
+        hp = hp + newHP;
     }
 
 
