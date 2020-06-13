@@ -1,0 +1,21 @@
+ID:1
+Home:Madscar,Iron Ford,Rose Crest,Corner,Your starting point.
+Iron Ford:Block,Queens Town,Home,Corner,Iron Ford on the light side of a canal has a pleasing atmosphere.
+Queens Town:Frost Ford,Corner,Iron Ford,Corner,It's this multicultural identity that has truly left its mark.
+Rose Crest:Harnsey,Home,Mysterious Cave III,Corner,The city of Rose Crest was built amidst the crisp snows of a silver taiga and is truly a historic wonder.
+Mysterious Cave III:Orge Cave II,Rose Crest,Corner,Corner,Dead end cave.
+Frost Ford:Orge Cave I,Corner,Block,Queens Town,Its grace is matched by the backdrop of a majestic mountain which have helped shape the city to what it is today.
+Orge Cave I:Sheffield,Corner,Chesterfield,Frost Ford,Magic comes from previous lives' power.
+Sheffield:Corner,Corner,Mysterious Cave I,Orge Cave I,Sheffield is completely destitute and rundown.
+Chesterfield:Mysterious Cave I,Orge Cave I,Block,Block,It's another day of travel from the hamlet to the ruins.
+Mysterious Cave I:Corner,Sheffield,Rose Lake,Chesterfield,prepare for the consequences!
+Madscar:Block,Block,Harnsey,Home,Crypt belonging to the stronghold master or someone else of importance.
+Rose Lake:Corner,Mysterious Cave I,Irragin,Block,A mishmash of wild sounds reverberated through the air and water as frogs jumping in the Rose Lake.
+Harnsey:Mysterious Cave II,Madscar,Orge Cave II,Rose Crest,Magic comes from a force within.
+Mysterious Cave II:Irragin,Block,Nani Lake,Harnsey,So far with only small successes.
+Irragin:Corner,Rose Lake,Erast,Mysterious Cave II,Flowers in Irragin desperately tried to claim the last remnants of light.
+Orge Cave II:Nani Lake,Harnsey,Corner,Mysterious Cave III,Power flows through every living thing.
+Nani Lake:Erast,Mysterious Cave II,Corner,Orge Cave II,The lake of Nani was built on the banks of a modest natural harbor and is truly an architectural lake.
+Erast:Corner,Irragin,Corner,Nani Lake,the natural
+RowColumn:4,5
+StartIndex:3,2

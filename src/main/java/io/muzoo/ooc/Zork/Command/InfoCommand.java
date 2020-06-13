@@ -13,6 +13,7 @@ public class InfoCommand implements Command {
 
     @Override
     public void execute(String arg) {
+        System.out.println("You are at " + player.getCurrentRoom().getRoomName() + ": " + player.getCurrentRoom().getDescription());
         System.out.println("Your HP is " + player.getHP());
         System.out.println("Your attack value " + player.getAttackMonster());
         if (player.getInventory().getPlayerInventory().isEmpty()){

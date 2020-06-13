@@ -1,4 +1,4 @@
-ID:1
+ID:2
 Home:Redwood forest,Town of Hall Brooks,Olympus Mountain,Corner,Your starting point.
 Town of Hall Brooks:Block,Orge Cave,Home,Corner,Town of Hall Brooks is where people like you exist.
 Orge Cave:Adder Cliff I,Corner,Town of Hall Brooks,Corner,Orge Cave is magical and wonderful.

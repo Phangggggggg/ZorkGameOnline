@@ -21,9 +21,7 @@ public class CreateMap {
         this.numLayer = numLayer;
         this.startIndex = startIndex;
         asciiMap = new String[numLayer[0]][numLayer[1]];
-        if (id.contains("1")){
-            startingPoint = "Home";
-        }
+        startingPoint = "Home";
         keep = new HashMap<>();
     }
 
@@ -111,7 +109,7 @@ public class CreateMap {
 
 
     public static void main(String[] args) {
-        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room2.txt");
+        ReadFile rf = new ReadFile("/Users/phang/Desktop/Zork/src/main/resources/room1.txt");
         rf.setRoomHashMap();
         CreateMap cm = new CreateMap(rf.getNumLayer(),rf.getStartIndex(),rf.getRoomHashMap(),rf.getId());
         cm.getAsciiMap();

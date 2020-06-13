@@ -23,7 +23,7 @@ public class PlayCommand implements Command {
 
     @Override
     public void execute(String arg) {
-        if (arg.equals("room2")){
+        if (arg.equals("room2") || arg.equals("room1")){
             simulation.constructMap(arg,false); // successful constructing map
             start = simulation.getStartRoom();
             Player player = new Player();
