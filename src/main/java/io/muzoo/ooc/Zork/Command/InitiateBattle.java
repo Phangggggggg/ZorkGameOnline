@@ -3,6 +3,8 @@ package io.muzoo.ooc.Zork.Command;
 import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
 
+import java.io.IOException;
+
 public class InitiateBattle implements Command{
     private CommandFactory cmdFactory;
     private Player player;
@@ -15,7 +17,7 @@ public class InitiateBattle implements Command{
     }
 
     @Override
-    public void execute(String arg) {
+    public void execute(String arg) throws IOException {
         if (player.getCurrentRoom().HasMonster()){
             Monster monster = player.getCurrentRoom().getMonster();
             MonsterAttack battle = new MonsterAttack(player,monster,cmdFactory,authentication);

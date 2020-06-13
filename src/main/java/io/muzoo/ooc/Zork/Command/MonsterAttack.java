@@ -3,6 +3,8 @@ package io.muzoo.ooc.Zork.Command;
 import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
 
+import java.io.IOException;
+
 // monster attacks player
 public class MonsterAttack {
     private Player player;
@@ -28,7 +30,7 @@ public class MonsterAttack {
         this.escape = true;
     }
 
-    public void fighting(){
+    public void fighting() throws IOException {
         System.out.println(monster.getName() + " is come for your life");
         System.out.println(monster.getName()+ " has hp " + monster.getHp());
         System.out.println("Your hp is " + player.getHP());

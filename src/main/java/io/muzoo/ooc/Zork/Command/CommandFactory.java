@@ -20,6 +20,7 @@ public class CommandFactory {
         commandMap.put("help", new HelpCommand(cmd));
         commandMap.put("play",new PlayCommand(simulation,cmd));
         commandMap.put("exit", new ExitCommand(simulation));
+        commandMap.put("autopilot",new AutopilotCommand(cmd));
 
     }
 

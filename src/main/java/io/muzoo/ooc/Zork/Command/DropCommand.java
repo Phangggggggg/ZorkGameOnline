@@ -12,7 +12,7 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(String arg) {
-        if (player.getInventory().getThatItem(arg).equals(null)){ // bug
+        if (player.getInventory().getThatItem(arg) == null){ // bug
             System.out.println("no such item in your inventory or you misspelled your item name");
         }
         else {

@@ -5,6 +5,8 @@ import io.muzoo.ooc.Zork.Map.ReadFile;
 import io.muzoo.ooc.Zork.Map.Room;
 import io.muzoo.ooc.Zork.Monster.Monster;
 import io.muzoo.ooc.Zork.Player.Player;
+
+import java.io.IOException;
 import java.util.*;
 
 public class Simulation {
@@ -133,6 +135,7 @@ public class Simulation {
 
         if (count == 3){
             exit.set(1,true);
+            System.out.println("Congrats!! You won");
         }
 
 
@@ -153,7 +156,7 @@ public class Simulation {
         exit.set(index,bool);
     }
 
-    public void play(){
+    public void play() throws IOException {
         System.out.println("Welcome to Zork!");
         while (!quit){
             command.getCommand(commandFactory,parser,"MainMenu",authentication.getLimitCommand());

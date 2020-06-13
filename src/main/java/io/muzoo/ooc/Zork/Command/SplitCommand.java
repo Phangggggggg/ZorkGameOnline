@@ -1,12 +1,13 @@
 package io.muzoo.ooc.Zork.Command;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class SplitCommand {
 
     public void getCommand(CommandFactory commandFactory, Parser parser, String gameState, Map<String,
-            ArrayList<String>> limitCommandMap){
+            ArrayList<String>> limitCommandMap) throws IOException {
         String command = parser.getCommand();
         String commandOne = command.split("/")[0];
         String commandTwo = command.split("/")[1];

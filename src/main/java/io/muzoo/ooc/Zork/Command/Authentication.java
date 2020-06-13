@@ -19,12 +19,14 @@ public class Authentication {
        mainMenu.add("load");
        mainMenu.add("quit");
        mainMenu.add("help");
+       mainMenu.add("autopilot");
        game.add("exit");
        game.add("quit");
        game.add("map");
        game.add("take");
        game.add("drop");
        game.add("eat");
+       game.add("help");
        game.add("info");
        game.add("go");
        game.add("initiateBattle");
