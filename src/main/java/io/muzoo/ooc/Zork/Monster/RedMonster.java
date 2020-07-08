@@ -7,8 +7,8 @@ public class RedMonster extends Monster {
         description = "Red like Fire";
     }
 
-    public RedMonster(int hp, int maxHP, int maxAttack, int attack) {
-        super(hp, maxHP, maxAttack, attack);
+    public RedMonster(int numUpgrade) {
+        super(100 + (numUpgrade * 2), 100 + (numUpgrade * 2), 50, 50);
         name = "Red Monster";
         description = "Red like Fire";
     }
@@ -41,15 +41,12 @@ public class RedMonster extends Monster {
     }
 
     public void increasePower(){
-        if (maxHP == hp){
-            maxHP += 2;
-            hp += 2;
-        }
-        else if (hp < maxHP){
-            hp += 3;
-            maxHP +=3;
-        }
+        hp += 2;
+        maxHP += 2;
+        countUpgrade += 1;
     }
+
+
 
 
 

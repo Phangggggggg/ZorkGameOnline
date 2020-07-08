@@ -7,8 +7,8 @@ public class BlueMonster extends Monster{
         description = "Blue like Ocean";
     }
 
-    public BlueMonster(int hp, int maxHP, int maxAttack, int attack) {
-        super(hp, maxHP, maxAttack, attack);
+    public BlueMonster(int numUpgrade) {
+        super(200+(numUpgrade * 2), 200+(numUpgrade * 2), 75, 75);
         name = "Blue Monster";
         description = "Blue like Ocean";
     }
@@ -43,14 +43,9 @@ public class BlueMonster extends Monster{
 
     @Override
     public void increasePower() {
-        if (maxHP == hp){
-            maxHP += 1;
-            hp += 1;
-        }
-        else if (hp < maxHP){
-            hp += 2;
-            maxHP +=2;
-        }
+        hp += 2;
+        maxHP +=2;
+        countUpgrade += 1;
 
     }
 

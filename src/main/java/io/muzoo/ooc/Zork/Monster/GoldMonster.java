@@ -7,8 +7,8 @@ public class GoldMonster extends Monster {
         description = "Gold like gold";
     }
 
-    public GoldMonster(int hp, int maxHP, int maxAttack, int attack) {
-        super(hp, maxHP, maxAttack, attack);
+    public GoldMonster(int numUpgrade) {
+        super(350 + (numUpgrade * 3),350 + (numUpgrade * 3), 80, 80);
         name = "Gold Monster";
         description = "Gold like gold";
     }
@@ -43,14 +43,9 @@ public class GoldMonster extends Monster {
 
     @Override
     public void increasePower() {
-        if (maxHP == hp){
-            maxHP += 1;
-            hp += 1;
-        }
-        else if (hp < maxHP){
-            hp += 3;
-            maxHP +=3;
-        }
-
+        maxHP += 3;
+        hp += 3;
+        countUpgrade += 1;
     }
+
 }

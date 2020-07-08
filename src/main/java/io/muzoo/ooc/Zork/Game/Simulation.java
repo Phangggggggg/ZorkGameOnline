@@ -22,6 +22,7 @@ public class Simulation {
     private int count;
     private Map<String, Room> roomMap;
     private Room startRoom;
+    private boolean useLoad;
 
 
     public Simulation(CommandFactory commandFactory) {
@@ -34,9 +35,14 @@ public class Simulation {
         exit.add(true);
         exit.add(false);
         count = 0;
-
+        useLoad = false;
     }
-    public void constructMap(String filePath,boolean bool){
+
+    public boolean isUseLoad() {
+        return useLoad;
+    }
+
+    public void constructMap(String filePath, boolean bool){
         String defaultPath =  "/Users/phang/Desktop/Zork/src/main/resources/";
         readFile = new ReadFile(defaultPath + filePath + ".txt");
         roomMap = readFile.getRoomHashMap();
@@ -113,6 +119,9 @@ public class Simulation {
     }
 
 
+    public void setUseLoad(boolean useLoad) {
+        this.useLoad = useLoad;
+    }
 
     public void checkGameFinish(){
         if (player.getCurrentRoom().HasMonster()){

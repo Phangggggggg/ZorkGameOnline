@@ -20,6 +20,7 @@ public class Authentication {
        mainMenu.add("quit");
        mainMenu.add("help");
        mainMenu.add("autopilot");
+       mainMenu.add("load");
        game.add("exit");
        game.add("quit");
        game.add("map");
@@ -29,6 +30,7 @@ public class Authentication {
        game.add("help");
        game.add("info");
        game.add("go");
+       game.add("save");
        game.add("initiateBattle");
        attackMonster.add("attack");
        attackMonster.add("take");

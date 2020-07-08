@@ -39,6 +39,6 @@ public class AutopilotCommand implements Command {
 
     @Override
     public String getDescription() {
-        return null;
+        return "automate the game";
     }
 }

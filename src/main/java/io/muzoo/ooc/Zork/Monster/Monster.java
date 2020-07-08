@@ -10,10 +10,12 @@ public abstract class Monster {
     protected int attack;
     protected String description;
     protected String name;
+    protected int countUpgrade;
 
 
 
     public Monster(int hp, int maxHP, int maxAttack, int attack) {
+        countUpgrade = 0;
         this.hp = hp;
         this.maxHP = maxHP;
         this.maxAttack = maxAttack;
@@ -22,6 +24,7 @@ public abstract class Monster {
 
     abstract public int attackPlayer();
     abstract public void increasePower();
+
 
     public int getHp() {
         return hp;
@@ -50,7 +53,7 @@ public abstract class Monster {
         hp = hp + newHP;
     }
 
-
-
-
+    public int getCountUpgrade() {
+        return countUpgrade;
+    }
 }

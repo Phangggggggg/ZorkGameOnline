@@ -21,6 +21,8 @@ public class CommandFactory {
         commandMap.put("play",new PlayCommand(simulation,cmd));
         commandMap.put("exit", new ExitCommand(simulation));
         commandMap.put("autopilot",new AutopilotCommand(cmd));
+        commandMap.put("save",new SaveCommand(simulation));
+        commandMap.put("load", new LoadCommand(simulation));
 
     }
 

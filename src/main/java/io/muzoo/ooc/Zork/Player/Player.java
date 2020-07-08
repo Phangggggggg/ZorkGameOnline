@@ -27,6 +27,10 @@ public class Player {
         this.attackMonster = attackMonster;
         this.currentRoom = currentRoom;
     }
+    public void setInventory(Inventory inv){
+        inventory = inv;
+
+    }
 
     public List<String> getAdjacentRoom() {
         return currentRoom.getAdjacentRooms();
